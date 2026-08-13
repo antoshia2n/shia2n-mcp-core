@@ -1,0 +1,23 @@
+{
+  "name": "shia2n-mcp-core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "shia2n core MCP (起動時の状態取得 + タスク管理の6本だけを持つ独立型)",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@cloudflare/workers-oauth-provider": "^0.0.9",
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "agents": "^0.10.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260401.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^3.90.0"
+  }
+}

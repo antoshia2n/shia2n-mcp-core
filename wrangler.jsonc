@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shia2n-mcp-core",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "observability": {
+    "enabled": true
+  },
+  // 置き場は shia2n-mcp と同じものを共用する。
+  // 理由は 2 つ。
+  //  1. 実行記録（自動で動くものの成否）を書いているのは shia2n-mcp 側で、
+  //     munikis__get_context はそれを読んで返す。別の置き場にすると
+  //     recent_runs が常に空になり、起動時の判定に使えなくなる。
+  //  2. 新しい置き場を作るには画面での作成が要り、その番号が分かるまで
+  //     この設定ファイルを書けない。共用なら今日そのまま動かせる。
+  // 引き換えに、入口の合言葉の保管場所が 2 本の Worker で共通になる。
+  // 分けたい場合は新しい置き場を作って id を差し替える（コードは変わらない）。
+  "kv_namespaces": [
+    {
+      "binding": "OAUTH_KV",
+      "id": "eebf082265bf4d93906382a83d069d45"
+    }
+  ]
+  // cron は置かない。自動で動くものは shia2n-mcp 側に残す。
+  // vars も置かない。この 6 本が読む設定はすべてシークレット側にある。
+}
