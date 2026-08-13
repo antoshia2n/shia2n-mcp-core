@@ -4,6 +4,12 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-04-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  // 2026-08-13 追加：画面で入れた変数とシークレットを、反映のたびに消さない。
+  // 既定（false）だと、この設定ファイルが唯一の正とみなされ、
+  // 画面側で足したものは deploy のたびに消される。
+  // この 1 本の設定 6 つは公開の置き場に書けない値なので、
+  // 画面で入れて、ここで守る形にする。
+  "keep_vars": true,
   "observability": {
     "enabled": true
   },
