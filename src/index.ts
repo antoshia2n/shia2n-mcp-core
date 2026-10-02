@@ -4,6 +4,7 @@
  * v0.1.0：新設（2026-08-13）
  *   判断記録：https://www.notion.so/3ab9c6c1c439814cb456e292bbfc19e8
  *   タスク：https://www.notion.so/3ab9c6c1c439811cb545d59204ea1b5d
+ * v0.2.0：TaskMaster のタスクを 1 本ずつの文書（tm_tasks）へ移す変更に合わせた（2026-10-02 開発部）。src/taskmaster.ts を shia2n-mcp と同じ中身にした
  *
  *   shia2n-mcp から「起動時の状態取得」と「タスク管理」の 6 本だけを
  *   独立した 1 本として切り出したもの。
